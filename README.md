@@ -42,6 +42,11 @@ To setup this application locally, take the following steps:
 * [MiniTest](https://github.com/seattlerb/minitest)
 
 ## Testing
+
+Common testing errors:
+
+* If during setup, there is a Gem:ConflictError, run 'gem update railties'
+
 ## Contributors
 
 * [Daniel Mulitauopele](https://github.com/DanielMulitauopele)
