@@ -7,6 +7,6 @@ class CardTest < MiniTest::Test
     end
 
     def test_it_exists
-
+        assert_instance_of Card, @card
     end
 end
