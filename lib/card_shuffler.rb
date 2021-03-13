@@ -2,18 +2,24 @@ require './lib/card'
 require './lib/deck'
 
 class CardShuffler
-    attr_reader :deck
+    attr_reader :deck, :current_user
 
     def initialize
         initial_card = Card.new("Spades", "Ace")
         @deck = Deck.new(initial_card)
+        @current_user = 'gamer'
     end
 
     def welcome_message
         puts "Welcome to the Altvia Card Shuffler!"
+        sleep (3)
         puts "This program shuffles cards..."
-        puts "but that's a little boring. Wanna see a magic trick instead?"
-        puts "Type Y if you, or N if you're a lame and I'll just leave you alone."
+        sleep(3)
+        puts "yeah...not that cool. But don't blame me, I didn't make myself." 
+        sleep (3)
+        puts "Wanna see a magic trick instead?"
+        sleep (3)
+        puts "Type Y if you wanna have fun, or N if you're a wet blanket and I'll just leave you alone."
     end
 
     def start 
@@ -24,7 +30,7 @@ class CardShuffler
     end
 
     def process_input(user_input)
-        input_commands[user_input.to_sym].call
+        input_commands[user_input.upcase.to_sym].call
     end
 
     private

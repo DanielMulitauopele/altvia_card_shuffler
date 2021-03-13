@@ -10,11 +10,19 @@ class CardShufflerTest < MiniTest::Test
         assert_instance_of CardShuffler, @shuffler 
     end
 
+    def test_it_starts_with_a_current_user
+        expected = 'gamer'
+        actual = @shuffler.current_user
+
+        assert_equal expected, actual
+    end
+
     def test_it_starts_with_a_deck
         assert_instance_of Deck, @shuffler.deck
     end
 
     def test_it_displays_welcome_message
+        skip
         assert_output(/Welcome to the Altvia Card Shuffler!\n/) { @shuffler.welcome_message }
     end
 
