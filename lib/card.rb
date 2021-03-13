@@ -7,7 +7,7 @@ class Card
     end
 
     def color
-        color_hash[@suit.capitalize.to_sym]
+        @suit != nil ? color_hash[@suit.capitalize.to_sym] : 'You need to select a suit first'  
     end
 
     private

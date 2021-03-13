@@ -36,14 +36,19 @@ class CardTest < MiniTest::Test
 
     def test_it_has_a_color_if_suit_is_downcased
         @card.suit = 'hearts'
-        
+
         expected = 'Red'
         actual = @card.color
 
         assert_equal expected, actual
     end
 
-    def test_it_has_a_type
-        skip
+    def test_if_there_is_no_suit_error_message_is_returned
+        @card.suit = nil
+
+        expected = 'You need to select a suit first'
+        actual = @card.color
+
+        assert_equal expected, actual
     end
 end
