@@ -3,7 +3,9 @@ require './lib/card'
 
 class CardTest < MiniTest::Test
     def setup
-        @card = Card.new
+        @card = Card.new(
+            suit = 'Hearts'
+        )
     end
 
     def test_it_exists
@@ -11,7 +13,10 @@ class CardTest < MiniTest::Test
     end
 
     def test_it_has_a_suit
-        
+        expected = 'Hearts'
+        actual = @card.suit
+
+        assert_equal expected, actual
     end
 
     def test_it_has_a_value
