@@ -28,7 +28,19 @@ class CardTest < MiniTest::Test
     end
 
     def test_it_has_a_color
-        skip
+        expected = 'Red'
+        actual = @card.color
+
+        assert_equal expected, actual
+    end
+
+    def test_it_has_a_color_if_suit_is_downcased
+        @card.suit = 'hearts'
+        
+        expected = 'Red'
+        actual = @card.color
+
+        assert_equal expected, actual
     end
 
     def test_it_has_a_type
