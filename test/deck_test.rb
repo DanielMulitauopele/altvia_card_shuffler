@@ -23,8 +23,8 @@ class DeckTest < MiniTest::Test
     end
 
     def test_it_can_add_more_cards
-        @deck.add(@card2)
-        @deck.add(@card3)
+        stack = [@card2, @card3]
+        @deck.add(stack)
 
         expected = 3
         actual = @deck.cards.count
@@ -33,8 +33,8 @@ class DeckTest < MiniTest::Test
     end
 
     def test_it_can_draw_one_card_at_a_time
-        @deck.add(@card2)
-        @deck.add(@card3)
+        stack = [@card2, @card3]
+        @deck.add(stack)
 
         expected = @card2
         actual = @deck.draw
@@ -43,8 +43,8 @@ class DeckTest < MiniTest::Test
     end
 
     def test_it_can_draw_specific_card
-        @deck.add(@card2)
-        @deck.add(@card3)
+        stack = [@card2, @card3]
+        @deck.add(stack)
 
         expected = @card1
         actual = @deck.draw(1)
@@ -53,8 +53,8 @@ class DeckTest < MiniTest::Test
     end
 
     def test_it_can_shuffle_cards
-        @deck.add(@card2)
-        @deck.add(@card3)
+        stack = [@card2, @card3]
+        @deck.add(stack)
 
         expected = [@card1, @card2, @card3]
         actual = @deck.shuffle

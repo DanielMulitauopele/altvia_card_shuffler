@@ -5,8 +5,8 @@ class Deck
         @cards = [initial_card]
     end
 
-    def add(new_card)
-        @cards << new_card
+    def add(new_cards)
+        @cards.concat(new_cards)
     end
 
     def draw(location = nil)
