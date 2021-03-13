@@ -9,7 +9,7 @@ class Deck
         @cards << new_card
     end
 
-    def draw(location = (@cards.count / 2))
-        @cards.slice!(location)
+    def draw(location = nil)
+        location == nil ? @cards.slice!(@cards.count / 2) : @cards.slice!(location - 1)
     end
 end
