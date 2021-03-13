@@ -51,4 +51,14 @@ class DeckTest < MiniTest::Test
 
         assert_equal expected, actual 
     end
+
+    def test_it_can_shuffle_cards
+        @deck.add(@card2)
+        @deck.add(@card3)
+
+        expected = [@card1, @card2, @card3]
+        actual = @deck.shuffle
+
+        refute_equal expected, actual 
+    end
 end
