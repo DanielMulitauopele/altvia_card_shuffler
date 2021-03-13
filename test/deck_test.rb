@@ -31,4 +31,16 @@ class DeckTest < MiniTest::Test
 
         assert_equal expected, actual 
     end
+
+    def test_it_can_draw_one_card_at_a_time
+        @deck.add(@card2)
+        @deck.add(@card3)
+
+        expected = @card2
+        actual = @deck.draw
+
+        assert_equal expected, actual 
+    end
+
+    
 end

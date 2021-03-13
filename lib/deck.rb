@@ -8,4 +8,8 @@ class Deck
     def add(new_card)
         @cards << new_card
     end
+
+    def draw(location = (@cards.count / 2))
+        @cards.slice!(location)
+    end
 end
