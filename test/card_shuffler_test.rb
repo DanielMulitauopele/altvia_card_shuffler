@@ -27,6 +27,6 @@ class CardShufflerTest < MiniTest::Test
     end
 
     def test_it_can_process_a_yes
-        assert_output(/Ah sweet! You're a gamer.\n/) { @shuffler.process_input('Y') }
+        assert_output(/Ah sweet! I knew you were a gamer.\n/) { @shuffler.process_input('Y') }
     end
 end

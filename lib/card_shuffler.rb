@@ -12,17 +12,28 @@ class CardShuffler
 
     def welcome_message
         puts "Welcome to the Altvia Card Shuffler!"
-        sleep (3)
+        sleep (2.5)
         puts "This program shuffles cards..."
-        sleep(3)
-        puts "yeah...not that cool. But don't blame me, I didn't make myself." 
-        sleep (3)
-        puts "Wanna see a magic trick instead?"
-        sleep (3)
-        puts "Type Y if you wanna have fun, or N if you're a wet blanket and I'll just leave you alone."
+        sleep(2.5)
+        puts "yeah...not that cool. But don't blame me, I didn't make myself."
+        sleep(2.5) 
     end
 
-    def start 
+    def introductions
+        puts "Anywho. What's your name?"
+        @current_user = gets.chomp
+
+        puts "#{@current_user}? That's cool. Cool cool cool. Ok #{@current_user}." 
+        sleep(2.5)
+    end
+
+    def start
+        puts "So I could show you some shuffled cards...but"
+        sleep (2.5)
+        puts "...wanna see a magic trick instead?"
+        sleep(2.5)
+        puts "Up to you. Yes or no. Type Y if you wanna have fun, or N if you're a wet blanket and I'll just leave you alone."
+
         while true
             user_input = gets.chomp
             process_input(user_input)
@@ -30,7 +41,7 @@ class CardShuffler
     end
 
     def process_input(user_input)
-        input_commands[user_input.upcase.to_sym].call
+        input_commands[user_input.upcase.to_sym].call 
     end
 
     private
@@ -43,11 +54,13 @@ class CardShuffler
     end
 
     def run_magic_trick
-        puts "Ah sweet! You're a gamer."
+        puts "Ah sweet! I knew you were a gamer."
+        sleep(2)
         puts "Ok let's do it."
     end
 
     def quit
+        sleep(2)
         abort "Ah fine. It's not like my feelings are hurt or anything. Bye, I guess."
     end
 end
