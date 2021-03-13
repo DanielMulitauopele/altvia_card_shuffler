@@ -27,6 +27,13 @@ class CardTest < MiniTest::Test
         assert_equal expected, actual
     end
 
+    def test_it_has_a_name 
+        expected = 'Nine of Hearts'
+        actual = @card.name
+
+        assert_equal expected, actual
+    end
+
     def test_it_has_a_color
         expected = 'Red'
         actual = @card.color
@@ -45,6 +52,15 @@ class CardTest < MiniTest::Test
 
     def test_if_there_is_no_suit_error_message_is_returned
         @card.suit = nil
+
+        expected = 'You need to select a suit first'
+        actual = @card.color
+
+        assert_equal expected, actual
+    end
+
+    def test_if_there_is_no_value_error_message_is_returned
+        @card.value = nil
 
         expected = 'You need to select a suit first'
         actual = @card.color
