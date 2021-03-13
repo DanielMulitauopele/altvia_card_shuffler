@@ -4,7 +4,8 @@ require './lib/card'
 class CardTest < MiniTest::Test
     def setup
         @card = Card.new(
-            suit = 'Hearts'
+            suit = 'Hearts',
+            value = 'Nine'
         )
     end
 
@@ -19,8 +20,11 @@ class CardTest < MiniTest::Test
         assert_equal expected, actual
     end
 
-    def test_it_has_a_value
-        skip
+    def test_it_has_a_value 
+        expected = 'Nine'
+        actual = @card.value
+
+        assert_equal expected, actual
     end
 
     def test_it_has_a_color
