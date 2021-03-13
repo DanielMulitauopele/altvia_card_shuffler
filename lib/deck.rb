@@ -1,5 +1,3 @@
-require 'set'
-
 class Deck
     attr_accessor :cards
 
@@ -22,7 +20,7 @@ class Deck
     def create(type = 'Standard')
         @cards = []
         standard_deck = []
-        
+
         if type == 'Standard'
             standard_values.each do |k, array|
                 array.each do |value|
