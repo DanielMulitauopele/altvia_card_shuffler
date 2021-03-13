@@ -3,10 +3,7 @@ require './lib/card'
 
 class CardTest < MiniTest::Test
     def setup
-        @card = Card.new(
-            suit = 'Hearts',
-            value = 'Nine'
-        )
+        @card = Card.new('Hearts', 'Nine')
     end
 
     def test_it_exists
