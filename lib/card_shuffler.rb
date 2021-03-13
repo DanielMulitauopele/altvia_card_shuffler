@@ -57,6 +57,19 @@ class CardShuffler
         puts "Ah sweet! I knew you were a gamer."
         sleep(2)
         puts "Ok let's do it."
+        sleep(2)
+        puts "So...let's use a standard deck, shall we?"
+        @deck.create
+        sleep(2)
+        puts "Ok. What we have here, #{@current_user}, is a regular deck. See? I'll show you the first 3 cards."
+        sleep(2)
+        puts "Here we have the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly the #{@deck.cards[2].name}."
+        sleep(2)
+        puts "Ah wait. This is a new deck. We'll need to shuffle..."
+        @deck.shuffle
+        sleep(2)
+        puts "Ok. Here are the new top 3 cards. This time the first card is the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly the #{@deck.cards[2].name}."
+
     end
 
     def quit
