@@ -1,3 +1,5 @@
+require 'set'
+
 class Deck
     attr_accessor :cards
 
@@ -15,5 +17,36 @@ class Deck
 
     def shuffle
         @cards.shuffle!
+    end
+
+    def create(type = 'Standard')
+        @cards = []
+        standard_deck = []
+        
+        if type == 'Standard'
+            standard_values.each do |k, array|
+                array.each do |value|
+                    standard_deck <<  Card.new(k, value)
+                end
+            end
+        end
+
+        add(standard_deck)
+    end
+
+    private
+
+    def standard_values
+        values = [
+            "Ace", "King", "Queen", "Jack", "Ten", "Nine", "Eight", "Seven", "Six",
+            "Five", "Four", "Three", "Two"
+        ]
+
+        {
+            'Hearts': values,
+            'Diamonds': values,
+            'Spades': values,
+            'Clubs': values,
+        }
     end
 end

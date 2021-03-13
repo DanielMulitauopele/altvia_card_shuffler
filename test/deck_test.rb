@@ -61,4 +61,21 @@ class DeckTest < MiniTest::Test
 
         refute_equal expected, actual 
     end
+
+    def test_it_can_create_regular_playing_deck
+        stack = [@card2, @card3]
+        @deck.add(stack)
+
+        expected_count = 3
+        actual_count = @deck.cards.count
+
+        assert_equal expected_count, actual_count
+
+        @deck.create('Standard')
+
+        expected = 52
+        actual = @deck.cards.count
+
+        assert_equal expected, actual
+    end
 end
