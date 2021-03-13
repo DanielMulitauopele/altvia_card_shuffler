@@ -3,6 +3,9 @@
 <img src="https://img.shields.io/badge/ruby-v2.6.6-red" title="ruby-badge">
 
 ## Relevant Links
+* [Listen to this as you run the program!](https://www.youtube.com/watch?v=9wrmm-PL36o)
+
+
 ## Table of Contents
 
 * [Description/Purpose](#descriptionpurpose)
