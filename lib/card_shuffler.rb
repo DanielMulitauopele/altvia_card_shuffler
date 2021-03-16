@@ -8,6 +8,7 @@ class CardShuffler
         initial_card = Card.new("Spades", "Ace")
         @deck = Deck.new(initial_card)
         @current_user = 'gamer'
+        @in_magic_trick = false
     end
 
     def welcome_message
@@ -41,7 +42,11 @@ class CardShuffler
     end
 
     def process_input(user_input)
-        input_commands[user_input.upcase.to_sym].call 
+        if @in_magic_trick
+            user_input.downcase == "random" ? @deck.draw : @deck.draw(user_input.to_i)
+        else
+            input_commands[user_input.upcase.to_sym].call 
+        end
     end
 
     private
@@ -54,6 +59,7 @@ class CardShuffler
     end
 
     def run_magic_trick
+        @in_magic_trick = true
         puts "Ah sweet! I knew you were a gamer."
         sleep(2)
         puts "Ok let's do it."
@@ -63,13 +69,18 @@ class CardShuffler
         sleep(2)
         puts "Ok. What we have here, #{@current_user}, is a regular deck. See? I'll show you the first 3 cards."
         sleep(2)
-        puts "Here we have the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly the #{@deck.cards[2].name}."
+        puts "Here we have the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly, the #{@deck.cards[2].name}."
         sleep(2)
         puts "Ah wait. This is a new deck. We'll need to shuffle..."
         @deck.shuffle
         sleep(2)
         puts "Ok. Here are the new top 3 cards. This time the first card is the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly the #{@deck.cards[2].name}."
+        sleep(2)
+        puts "Alright. So pick a card. Any card. If you want to take the first card, type 1. If you want to take the last card, type 0. If you want the 15th card, type 15. Whichever you want. Or if you want a random card, type random."
+    end
 
+    def random_draw
+        @deck.draw
     end
 
     def quit
