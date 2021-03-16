@@ -1,5 +1,4 @@
-require './lib/card'
-require './lib/deck'
+require 'cards_on_deck'
 
 class CardShuffler
     attr_reader :deck, :current_user
