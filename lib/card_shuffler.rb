@@ -7,7 +7,10 @@ class CardShuffler
         initial_card = GemCard.new("Spades", "Ace")
         @deck = GemDeck.new(initial_card)
         @current_user = 'gamer'
-        @in_magic_trick = false
+        @already_shuffled = false
+
+        @website = 'https://immense-reaches-91193.herokuapp.com/'
+        @repo = 'https://github.com/DanielMulitauopele/FullStackHouse'
     end
 
     def welcome_message
@@ -28,11 +31,11 @@ class CardShuffler
     end
 
     def start
-        puts "So I could show you some shuffled cards...but"
+        puts "So I guess I'm supposed to shuffle some cards for you for something...so"
         sleep (2.5)
-        puts "...wanna see a magic trick instead?"
-        sleep(2.5)
-        puts "Up to you. Yes or no. Type Y if you wanna have fun, or N if you're a wet blanket and I'll just leave you alone."
+        puts "...wanna see?"
+        sleep(1.5)
+        puts "Up to you. Yes or no. Type Y if you wanna see the 2nd coolest thing ever, or N if you're a wet blanket and I'll just leave you alone."
 
         while true
             user_input = gets.chomp
@@ -41,45 +44,48 @@ class CardShuffler
     end
 
     def process_input(user_input)
-        if @in_magic_trick
-            user_input.downcase == "random" ? @deck.draw : @deck.draw(user_input.to_i)
-        else
-            input_commands[user_input.upcase.to_sym].call 
-        end
+        input_commands.key?(user_input.upcase.to_sym) ? input_commands[user_input.upcase.to_sym].call : (puts "Nah, that doesn\'t look right, #{@current_user}")
     end
 
     private
 
     def input_commands
         {
-            'Y': method(:run_magic_trick),
-            'N': method(:quit)
+            'Y': method(:run_shuffle),
+            'N': method(:quit),
+            'SEND IT!': method(:show_deets)
         }
     end
 
-    def run_magic_trick
+    def run_shuffle
         @in_magic_trick = true
         puts "Ah sweet! I knew you were a gamer."
-        sleep(2)
+        sleep(2.5)
         puts "Ok let's do it."
-        sleep(2)
+        sleep(2.5)
         puts "So...let's use a standard deck, shall we?"
         @deck.create
-        sleep(2)
+        sleep(2.5)
         puts "Ok. What we have here, #{@current_user}, is a regular deck. See? I'll show you the first 3 cards."
-        sleep(2)
+        sleep(3)
         puts "Here we have the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly, the #{@deck.cards[2].name}."
-        sleep(2)
+        sleep(3.5)
         puts "Ah wait. This is a new deck. We'll need to shuffle..."
         @deck.shuffle
-        sleep(2)
+        sleep(2.5)
         puts "Ok. Here are the new top 3 cards. This time the first card is the #{@deck.cards.first.name}, and next the #{@deck.cards[1].name}, and lastly the #{@deck.cards[2].name}."
-        sleep(2)
-        puts "Alright. So pick a card. Any card. If you want to take the first card, type 1. If you want to take the last card, type 0. If you want the 15th card, type 15. Whichever you want. Or if you want a random card, type random."
+        sleep(4.5)
+        puts "Welp. That's it...actually...Wanna see something way cooler? If you do, type \'SEND IT!\' Don't forget the exclamation point. Gotta show that passion."
     end
 
-    def random_draw
-        @deck.draw
+    def show_deets
+        puts 'SENNNNNNNDDDDDD ITTTTTT!!!!!'
+        sleep(2.5)
+        puts "Nice. Ok. Well check out this app! You can press cmd/ctrl + click and it should take you there: #{@website}"
+        sleep(3.5)
+        puts "Here's the repo if you're a nerd and like that code stuff (same thing with the cmd/ctrl + click): #{@repo}"
+        sleep (4)
+        abort "Ok see ya!"
     end
 
     def quit
