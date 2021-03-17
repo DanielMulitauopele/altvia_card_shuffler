@@ -65,7 +65,7 @@ To setup this application locally, take the following steps:
 To test this application locally, take the following steps:
 
 * Run `ruby test/card_shuffler_test.rb` to run the test suite
-* All 4 tests should pass, with one test skipped due to `sleep` code. If unskipped, that test should pass as well. 
+* All 5 tests should pass, with 2 tests skipped due to `sleep` code. If unskipped, those tests pass as well. 
 
 Common testing errors:
 
