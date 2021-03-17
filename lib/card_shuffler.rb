@@ -18,7 +18,7 @@ class CardShuffler
         sleep (2.5)
         puts "This program shuffles cards..."
         sleep(2.5)
-        puts "yeah...not that cool. But don't blame me, I didn't make myself."
+        puts "yeah...I'm a pretty big deal in these parts."
         sleep(2.5) 
     end
 
