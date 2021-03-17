@@ -4,8 +4,8 @@ class CardShuffler
     attr_reader :deck, :current_user
 
     def initialize
-        initial_card = Card.new("Spades", "Ace")
-        @deck = Deck.new(initial_card)
+        initial_card = GemCard.new("Spades", "Ace")
+        @deck = GemDeck.new(initial_card)
         @current_user = 'gamer'
         @in_magic_trick = false
     end

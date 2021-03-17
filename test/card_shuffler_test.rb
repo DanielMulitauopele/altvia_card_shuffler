@@ -18,7 +18,7 @@ class CardShufflerTest < MiniTest::Test
     end
 
     def test_it_starts_with_a_deck
-        assert_instance_of Deck, @shuffler.deck
+        assert_instance_of GemDeck, @shuffler.deck
     end
 
     def test_it_displays_welcome_message
