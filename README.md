@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/badge/ruby-v2.6.6-red" title="ruby-badge">
 
-<img width="1049" alt="Screen Shot 2021-03-16 at 11 13 30 PM" src="https://user-images.githubusercontent.com/37354322/111418414-4f21a000-86ad-11eb-8066-6c02d30160f2.png">
+<img width=auto alt="Screen Shot 2021-03-17 at 12 19 45 AM" src="https://user-images.githubusercontent.com/37354322/111423916-9e200300-86b6-11eb-944a-b4ddbb0736af.png">
 
 ## Relevant Links
 * [Trello Board](https://trello.com/b/r1uKJ90v/altvia-technical-challenge)
